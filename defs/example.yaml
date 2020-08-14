@@ -1,0 +1,17 @@
+---
+name: "apache_demo"
+log: "/var/log/httpd/access_log"
+sniff:
+    - sniff_name: 'SHOW_GET'
+      enabled: True
+      regexp: 'GET .*'
+      timeout: 120
+      commands: |
+        echo "GET Request Found at $(date)"
+    - sniff_name: 'SHOW_PUT'
+      enabled: True
+      regexp: 'PUT .*'
+      timeout: 60
+      commands: |
+        echo "PUT Request Found at $(date)"
+...
